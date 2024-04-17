@@ -28,9 +28,14 @@ console.log(cellClicked)
 const squaresClicked = document.getElementsByClassName("square")
 
 for (const square of squaresClicked){
-    square.addEventListener("click", function(){
-        console.log(square.id)
-    })
+    square.addEventListener("click", addMarkToBox)
+}
+
+function addMarkToBox(e){
+    let square = e.target
+    console.log(square.id)
+    let currentMark = document.getElementById(square.id)
+    currentMark.textContent = "X"
 }
 
 let board, turn, winner;
@@ -41,8 +46,6 @@ let board, turn, winner;
 //playAgainBtn.addEventListener('click', initialize);
 
 function userIsX(){}
-
-function addMarkToBox(){}
 
 function checkWinningCombos(){}
 

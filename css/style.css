@@ -7,3 +7,7 @@ h1 {
   align-items: center ;
 }
 
+.mainboardStyle{
+  flex-direction: column;
+  
+}

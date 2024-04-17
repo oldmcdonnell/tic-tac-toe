@@ -1,9 +1,62 @@
+// // Select all elements with the same first three letters
+// const elements = document.querySelectorAll('[data-name^="cell"]');
+
+// // Loop through the selected elements and add an event listener to each one
+// elements.forEach(element => {
+//   element.addEventListener('click', () => {
+//     // Do something when the element is clicked
+//   });
+// });
+/*-
+
+// Select all elements with the same first three letters
+const cellClicked = document.querySelectorAll('[data-name^="cell"]');
+
+// Loop through the selected elements and add an event listener to each one
+cellClicked.forEach(element => {
+  element.addEventListener('click', () => {
+    console.log("test tclick")
+    // Do something when the element is clicked
+  });
+});
+console.log(cellClicked)
+
+-*/
+
+//get by classnane
+
+const squaresClicked = document.getElementsByClassName("square")
+
+for (const square of squaresClicked){
+    square.addEventListener("click", function(){
+        console.log(square.id)
+    })
+}
+
+let board, turn, winner;
+
+
+
+//document.getElementById('board').addEventListener('click', handleMove);
+//playAgainBtn.addEventListener('click', initialize);
 
 function userIsX(){}
 
 function addMarkToBox(){}
 
 function checkWinningCombos(){}
+
+let squareAssign  = {
+cell0:0, 
+cell1:1, 
+cell2:2,
+cell3:3,
+cell4:4,
+cell5:5,
+cell6:6,
+cell7:7,
+cell8:8,
+}
 
 const winningCombo = [
     [0, 1, 2],
@@ -15,4 +68,3 @@ const winningCombo = [
     [0, 4, 8],
     [2, 4, 6]
   ];
-

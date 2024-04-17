@@ -9,5 +9,9 @@ h1 {
 
 .mainboardStyle{
   flex-direction: column;
-  
+
+}
+
+.noClick {
+  pointer-events: none;
 }

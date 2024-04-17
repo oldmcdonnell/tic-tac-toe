@@ -24,6 +24,9 @@ console.log(cellClicked)
 -*/
 
 //get by classnane
+let newGame = true;
+let turn = 0;
+let markXorO = ['X', 'O', 'X', 'O', 'X', 'O' , 'X', 'O', 'X']
 
 const squaresClicked = document.getElementsByClassName("square")
 
@@ -35,11 +38,19 @@ function addMarkToBox(e){
     let square = e.target
     console.log(square.id)
     let currentMark = document.getElementById(square.id)
-    currentMark.textContent = "X"
+    square.classList.add("noClick")
+    //remember to remove noclick after reset
+    if (newGame === true){
+        turn = Math.round(Math.random())
+        currentMark.textContent = markXorO[turn]
+        newGame = false
+        turn++;
+
+    } else {
+        currentMark.textContent = markXorO[turn]
+        turn++;
+    }
 }
-
-let board, turn, winner;
-
 
 
 //document.getElementById('board').addEventListener('click', handleMove);
@@ -60,6 +71,12 @@ cell6:6,
 cell7:7,
 cell8:8,
 }
+
+
+// let currentTable = [
+//     [null],[],[],
+
+// ]
 
 const winningCombo = [
     [0, 1, 2],

@@ -10,51 +10,74 @@
     <!-- project styles -->
     <link rel="stylesheet" href="./css/style.css">
   </head>
-  <body class="bg-light">
-    <div class="justify-content-center p-3">
+  <body class="container justify-content-center">
+    <div class="d-flex justify-content-evenly p-3">
+      <div class="d-flex flex-column text-center">
+        <div class="scoreStyle">X games won</div>
+        <div id="winnerX" class="scoreStyle">0</div>
+      </div>
       <h1>Tic-Tac-Toe</h1>
+      <div class="d-flex flex-column text-center">
+        <div class="scoreStyle">O games won</div>
+        <div id="winnerY" class="scoreStyle">0</div>
+      </div>
     </div>
-    <div class ="mx-auto mainboardStyle">
+    <div class ="container">
       <div class="container justify-content-center">
-        <div class="row">
+        <div class="row justify-content-center">
           <div id="cell0" class="d-flex justify-content-center col-2 border border-dark boxStyle square">
             Cell 0
           </div>
           <div id="cell1" class="d-flex justify-content-center col-2 border border-dark boxStyle square">
-            Cell 1
+         
           </div>
           <div id="cell2" class="d-flex justify-content-center col-2 border border-dark boxStyle square">
-            Cell 2
-          </div>
-        </div>
-        </div>
-        <div class="container justify-content-center">
-          <div class="row">
-            <div id="cell3" class="d-flex justify-content-center col-2 border border-dark boxStyle square">
-              Cell 3
-            </div>
-            <div id="cell4" class="d-flex justify-content-center col-2 border border-dark boxStyle square">
-              Cell 4
-            </div>
-            <div id="cell5" class="d-flex justify-content-center col-2 border border-dark boxStyle square">
-              Cell 5
-            </div>
-          </div>
-        </div>
-        <div class="container justify-content-center">
-        <div class="row">
-          <div id="cell6" class="d-flex justify-content-center col-2 border border-dark boxStyle square">
-            Cell 6
-          </div>
-          <div id="cell7" class="d-flex justify-content-center col-2 border border-dark boxStyle square">
-            Cell 7
-          </div>
-          <div id="cell8" class="d-flex justify-content-center col-2 border border-dark boxStyle square">
-            Cell 8
+         
           </div>
         </div>
       </div>
+      <div class="container justify-content-center">
+        <div class="row justify-content-center">
+          <div id="cell3" class="d-flex justify-content-center col-2 border border-dark boxStyle square">
+            
+          </div>
+          <div id="cell4" class="d-flex justify-content-center col-2 border border-dark boxStyle square">
+            
+          </div>
+          <div id="cell5" class="d-flex justify-content-center col-2 border border-dark boxStyle square">
+            
+          </div>
+        </div>
+      </div>
+      <div class="container justify-content-center">
+        <div class="row justify-content-center">
+          <div id="cell6" class="d-flex justify-content-center col-2 border border-dark boxStyle square">
+          
+          </div>
+          <div id="cell7" class="d-flex justify-content-center col-2 border border-dark boxStyle square">
+          
+          </div>
+          <div id="cell8" class="d-flex justify-content-center col-2 border border-dark boxStyle square">
+          
+          </div>
+          <div class="row justify-content-md-center">
+            <div id="currentTurn" class="d-flex justify-content-center">
+            Current Turn
+          </div>
+          </div>
+          <div class="row justify-content-md-center">
+            <div id="winner" class="d-flex justify-content-center">
+            
+            </div>
+          </div>
+          <div>
+            <div id="resetGame" class="d-flex justify-content-center">
+              <button>Reset Game</button>
+            </div>
+          </div>
+        </div>
     </div>
+  </div>
 
     <!-- BootStrap JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>

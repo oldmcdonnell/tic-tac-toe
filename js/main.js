@@ -5,9 +5,6 @@ let docWinnerY = document.getElementById("winnerY")
 let winnerX = 0
 let winnerO = 0
 
-//setting storage
-
-
 //set boolean for segments of the game
 let newGame = true
 let gameWinner = false
@@ -76,16 +73,9 @@ function addMarkToBox(e){
         localStorage.setItem('setting a string', JSON.stringify(storeVar))
         console.log(localStorage)
         newGame = false
-        console.log(resultArray)
-        
-        //turn *= -1
     } else if(gameWinner === false) {
         handleMove(square)
         square.textContent = markXorO[turn]
-        console.log(resultArray)
-        console.log('newgame: ', newGame)
-        console.log('turn: ', turn)
-        //turn *= -1;
     }
 }
 
@@ -100,9 +90,7 @@ function handleMove(square) {
         nextTurn.textContent = `Next Turn, ${markXorO[turn]}` //sets next turn
         turn *= -1;
         getWinner()
-        //console.log('AGW ', markXorO[turn])
         localStorage.setItem('result array', JSON.stringify({resultArray}))
-        //JSON.parse(localStorage.getItem('data'))
     }
   }
 
@@ -120,7 +108,6 @@ if(winnerX>=1){
 if(winnerO>=1){
     docWinnerY.textContent = winnerO
     }
-console.log("scoreboard triggered")
 }
 
 function catGame(a, obj) {
@@ -155,12 +142,10 @@ resetButton.addEventListener("click", resetFunction)
 
 function resetFunction(){
     let removeClass = document.getElementsByClassName("square")
-    console.log(removeClass)
     for (const square of removeClass){
         square.classList.remove("noClick")
         square.classList.remove("opacityStyle")
         square.textContent = ""
-        console.log('square ', square)
     }
     
     console.log(removeClass.classList)

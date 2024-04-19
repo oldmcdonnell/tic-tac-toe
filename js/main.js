@@ -33,7 +33,7 @@ let squareAssign  = {
     cell7:7,
     cell8:8,
 }
-
+//array for winning combos
 const winningCombos = [
     [0, 1, 2],
     [3, 4, 5],
@@ -66,21 +66,21 @@ for (const square of squaresClicked){
 function addMarkToBox(e){
     let square = e.target
     console.log(square.id)
-    square.classList.add("noClick")
-    square.classList.add("opacityStyle")
-    //remember to remove noclick after reset
+    square.classList.add("noClick") //prevent square from being clicked again
+    square.classList.add("opacityStyle") //onclick the square gets darker
     if (newGame === true){
         firstMark()
         handleMove(square)
-        //resultArray[squareAssign[square.id]] = markXorO[turn]
         square.textContent = markXorO[turn]
+        let storeVar = square.textContent = markXorO[turn]
+        localStorage.setItem('setting a string', JSON.stringify(storeVar))
+        console.log(localStorage)
         newGame = false
         console.log(resultArray)
         
         //turn *= -1
     } else if(gameWinner === false) {
         handleMove(square)
-        //resultArray[squareAssign[square.id]] = markXorO[turn]
         square.textContent = markXorO[turn]
         console.log(resultArray)
         console.log('newgame: ', newGame)
@@ -94,15 +94,13 @@ function addMarkToBox(e){
 function handleMove(square) {
     // obtain index of square
     const idx = parseInt(square.id.replace('cell', ''));
-    //const idx = parseInt(squareAssign.input)
     console.log('idx: ', idx)
     if (resultArray[idx] === 0 && gameWinner === false){
         resultArray[idx] = turn;
-        nextTurn.textContent = `Next Turn, ${markXorO[turn]}`
-        console.log('Current Turn ', markXorO[turn])
+        nextTurn.textContent = `Next Turn, ${markXorO[turn]}` //sets next turn
         turn *= -1;
         getWinner()
-        console.log('AGW ', markXorO[turn])
+        //console.log('AGW ', markXorO[turn])
         localStorage.setItem('result array', JSON.stringify({resultArray}))
         //JSON.parse(localStorage.getItem('data'))
     }
@@ -110,7 +108,6 @@ function handleMove(square) {
 
 function scoreBoard(){
 
-console.log('scoreboard ',markXorO[turn])
 if(markXorO[turn] === 'X'){
     winnerX++
     }else{
@@ -119,10 +116,10 @@ if(markXorO[turn] === 'X'){
 
 if(winnerX>=1){
     docWinnerX.textContent = winnerX
-} 
+    } 
 if(winnerO>=1){
     docWinnerY.textContent = winnerO
-}
+    }
 console.log("scoreboard triggered")
 }
 
@@ -138,16 +135,11 @@ function catGame(a, obj) {
 
 function getWinner() {
 for (let i = 0; i < winningCombos.length; i++) {
-        //console.log("testing if 3", (Math.abs(resultArray[winningCombos[i][0]] + resultArray[winningCombos[i][1]] + resultArray[winningCombos[i][2]])))
     if (Math.abs(resultArray[winningCombos[i][0]] + resultArray[winningCombos[i][1]] + resultArray[winningCombos[i][2]]) === 3)
         {
-        console.log('getWinner: ', resultArray[winningCombos[i][0]])
-        console.log('Winner is: ', markXorO[turn])
         scoreBoard()
         winnerText.textContent = `The winner is ${markXorO[turn]}`
         gameWinner = true
-        console.log(gameWinner)
-        //return resultArray[winningCombos[i][0]];
         }
     }
     if(resultArray.includes(0)){

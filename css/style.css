@@ -17,6 +17,10 @@ h1 {
 
 }
 
+.opacityStyle{
+  opacity: .9;
+}
+
 .noClick {
   pointer-events: none;
 }

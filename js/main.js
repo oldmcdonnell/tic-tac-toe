@@ -67,6 +67,7 @@ function addMarkToBox(e){
     let square = e.target
     console.log(square.id)
     square.classList.add("noClick")
+    square.classList.add("opacityStyle")
     //remember to remove noclick after reset
     if (newGame === true){
         firstMark()
@@ -75,6 +76,7 @@ function addMarkToBox(e){
         square.textContent = markXorO[turn]
         newGame = false
         console.log(resultArray)
+        
         //turn *= -1
     } else if(gameWinner === false) {
         handleMove(square)
@@ -164,6 +166,7 @@ function resetFunction(){
     console.log(removeClass)
     for (const square of removeClass){
         square.classList.remove("noClick")
+        square.classList.remove("opacityStyle")
         square.textContent = ""
         console.log('square ', square)
     }

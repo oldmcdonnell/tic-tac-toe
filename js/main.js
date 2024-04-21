@@ -126,16 +126,16 @@ for (let i = 0; i < winningCombos.length; i++) {
         {
         scoreBoard()
         winnerText.textContent = `The winner is ${markXorO[turn]}`
-        gameWinner = true
-        }
-    }
-    if(resultArray.includes(0)){
+        gameWinner = true 
+        } else if(resultArray.includes(0)){
         console.log("good to go")
-    } else {
+        } else {
         console.log("cat")
         winnerText.textContent = "No winners, Cat game"
     }
 }
+}
+
 
 const resetButton = document.getElementById("resetGame")
 resetButton.addEventListener("click", resetFunction)

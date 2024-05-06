@@ -109,7 +109,7 @@ if(winnerO>=1){
     docWinnerY.textContent = winnerO
     }
 }
-
+//
 function catGame(a, obj) {
     var i = resultArray.length-1;
     while (i--) {
@@ -119,7 +119,7 @@ function catGame(a, obj) {
     }
     return false;
 }
-
+//main function to get a winner, compaers two arrays
 function getWinner() {
 for (let i = 0; i < winningCombos.length; i++) {
     if (Math.abs(resultArray[winningCombos[i][0]] + resultArray[winningCombos[i][1]] + resultArray[winningCombos[i][2]]) === 3)
